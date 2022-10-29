@@ -12,7 +12,7 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...          
       - eval $(docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .)
-      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG      
+      - docker tag ecr-public:latest  3062-7481-2096.dkr.ecr.us-west-1.amazonaws.com/ecr-public:latest     
   post_build:
     commands:
       - echo Build completed on `date`
