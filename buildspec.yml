@@ -6,7 +6,8 @@ phases:
       - echo Logging in to Amazon ECR...
       - echo $AWS_DEFAULT_REGION
       #- aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
-      - eval $(aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin 3062-7481-2096.dkr.ecr.us-west-1.amazonaws.com)
+      #- eval $(aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin 3062-7481-2096.dkr.ecr.us-west-1.amazonaws.com)
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/p2w0c5l8
   build:
     commands:
       - echo Build started on `date`
